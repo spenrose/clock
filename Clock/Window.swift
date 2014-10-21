@@ -17,20 +17,11 @@ class Window: NSWindow {
     }
     
     override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
-        super.init(contentRect: NSZeroRect, styleMask: NSBorderlessWindowMask, backing: .Buffered, defer: false)
-        
-        opaque = false
-        hasShadow = false
-        movable = true
-        movableByWindowBackground = true
-        releasedWhenClosed = false
-        backgroundColor = NSColor.clearColor()
-        center()
-        makeKeyAndOrderFront(nil)
+        super.init(contentRect: contentRect, styleMask: NSBorderlessWindowMask, backing: .Buffered, defer: false)
     }
-
+    
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
     }
     
 }
