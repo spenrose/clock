@@ -15,12 +15,12 @@ class WindowController: NSWindowController {
         
         if let window = self.window {
             window.styleMask = NSBorderlessWindowMask
-            window.opaque = false
+            window.isOpaque = false
             window.hasShadow = false
-            window.movable = true
-            window.movableByWindowBackground = true
-            window.releasedWhenClosed = false
-            window.backgroundColor = NSColor.clearColor()
+            window.isMovable = true
+            window.isMovableByWindowBackground = true
+            window.isReleasedWhenClosed = false
+            window.backgroundColor = NSColor.clear
         }
     }
 }

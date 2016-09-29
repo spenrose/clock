@@ -14,17 +14,17 @@ class ViewController: NSViewController {
     @IBOutlet weak var dateLabel: NSTextField!
     @IBOutlet var visualEffectView: NSVisualEffectView!
     
-    let dateFormatter: NSDateFormatter
-    let timeFormatter: NSDateFormatter
+    let dateFormatter: DateFormatter
+    let timeFormatter: DateFormatter
     
     required init?(coder: NSCoder) {
-        dateFormatter = NSDateFormatter()
-        dateFormatter.timeStyle = .NoStyle
-        dateFormatter.dateStyle = .LongStyle
+        dateFormatter = DateFormatter()
+        dateFormatter.timeStyle = .none
+        dateFormatter.dateStyle = .long
         
-        timeFormatter = NSDateFormatter()
-        timeFormatter.timeStyle = .MediumStyle
-        timeFormatter.dateStyle = .NoStyle
+        timeFormatter = DateFormatter()
+        timeFormatter.timeStyle = .medium
+        timeFormatter.dateStyle = .none
         
         super.init(coder: coder)
     }
@@ -39,22 +39,16 @@ class ViewController: NSViewController {
             return true
         })
         
-        NSTimer.scheduledTimerWithTimeInterval(1.0/10.0, target: self, selector: "updateTimeStamp", userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1.0/10.0, target: self, selector: #selector(ViewController.updateTimeStamp), userInfo: nil, repeats: true)
         updateTimeStamp()
     }
-
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
+    
     // MARK: - 
     
     func updateTimeStamp() {
-        let now = NSDate()
-        timeLabel.stringValue = timeFormatter.stringFromDate(now)
-        dateLabel.stringValue = dateFormatter.stringFromDate(now)
+        let now = Date()
+        timeLabel.stringValue = timeFormatter.string(from: now)
+        dateLabel.stringValue = dateFormatter.string(from: now)
     }
 
 }
