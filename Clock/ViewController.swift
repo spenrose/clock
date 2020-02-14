@@ -23,8 +23,7 @@ class ViewController: NSViewController {
         dateFormatter.dateStyle = .long
         
         timeFormatter = DateFormatter()
-        timeFormatter.timeStyle = .medium
-        timeFormatter.dateStyle = .none
+        timeFormatter.dateFormat = "HH:mm:ss"
         
         super.init(coder: coder)
     }
