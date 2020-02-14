@@ -16,8 +16,8 @@ class Window: NSWindow {
         }
     }
     
-    override init(contentRect: NSRect, styleMask aStyle: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
-        super.init(contentRect: contentRect, styleMask: NSBorderlessWindowMask, backing: .buffered, defer: false)
+    override init(contentRect: NSRect, styleMask aStyle: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
+        super.init(contentRect: contentRect, styleMask: .borderless, backing: .buffered, defer: false)
     }
     
 }

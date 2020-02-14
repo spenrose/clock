@@ -45,7 +45,7 @@ class ViewController: NSViewController {
     
     // MARK: - 
     
-    func updateTimeStamp() {
+    @objc func updateTimeStamp() {
         let now = Date()
         timeLabel.stringValue = timeFormatter.string(from: now)
         dateLabel.stringValue = dateFormatter.string(from: now)

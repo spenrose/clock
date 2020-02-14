@@ -14,7 +14,7 @@ class WindowController: NSWindowController {
         super.windowDidLoad()
         
         if let window = self.window {
-            window.styleMask = NSBorderlessWindowMask
+            window.styleMask = .borderless
             window.isOpaque = false
             window.hasShadow = false
             window.isMovable = true
